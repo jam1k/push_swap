@@ -6,14 +6,14 @@
 #    By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 10:18:43 by jshestov          #+#    #+#              #
-#    Updated: 2022/12/28 13:00:24 by jshestov         ###   ########.fr        #
+#    Updated: 2022/12/28 14:03:15 by jshestov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Variables
-NAME		= push_swap.a
+NAME		= push_swap
 CC			= cc
-CFLAGS		= -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror -g
 RM 			= /bin/rm -f
 
 INCS_DIR	= ./
@@ -30,7 +30,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
 	@echo "Linking $@"
-	@ar rc $(NAME) $(OBJS)
+	@$(CC) -o $(NAME) $(OBJS)
 	@echo "Done!"
 
 $(OBJS): $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c

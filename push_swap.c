@@ -6,13 +6,14 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 13:05:47 by jshestov         ###   ########.fr       */
+/*   Updated: 2022/12/28 13:43:59 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	main()
+int	main(void)
 {
 	printf("Hello");
+	return (0);
 }
