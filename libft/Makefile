@@ -19,6 +19,7 @@ SRC		:=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c 
 			ft_print_pointer.c ft_print_unsigned_num.c ft_printf_tools.c ft_printf.c ft_lstdelone_bonus.c	\
 			ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_lstnew_bonus.c ft_lstadd_front_bonus.c	\
 			ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c
+
 OBJS = $(SRC:%.c=$(BUILD_DIR)/%.o)
 
 
@@ -26,15 +27,13 @@ OBJS = $(SRC:%.c=$(BUILD_DIR)/%.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(INC) $(SRC)
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
 $(OBJS): $(BUILD_DIR)/%.o: $(SRCDIR)/%.c
-	@mkdir -p $(BUILD_DIR)
+	@mkdir -p $(@D)
 	@echo "Compiling $<"
-	@$(CC) $(FLAGS) -I $(INCS_DIR) -I $(LIBFT_DIR) -c $< -o $@
-
+	@$(CC) $(CFLAGS) -I $(INCS_DIR) -I $(LIBFT_DIR) -c $< -o $@
 re: fclean all
 
 clean:
