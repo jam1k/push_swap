@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:31:30 by jshestov          #+#    #+#             */
-/*   Updated: 2022/11/24 10:54:33 by jshestov         ###   ########.fr       */
+/*   Updated: 2022/11/22 09:58:33 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "libft.h"
+# include "./libft/libft.h"
 
 int	ft_printf(const char *placeholders, ...);
 int	ft_print_c(char c);

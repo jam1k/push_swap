@@ -32,7 +32,6 @@ $(NAME): $(OBJS)
 
 $(OBJS): $(BUILD_DIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(@D)
-	@echo "Compiling $<"
 	@$(CC) $(CFLAGS) -I $(INCS_DIR) -I $(LIBFT_DIR) -c $< -o $@
 re: fclean all
 

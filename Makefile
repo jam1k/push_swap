@@ -6,7 +6,7 @@
 #    By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 10:18:43 by jshestov          #+#    #+#              #
-#    Updated: 2022/12/28 14:03:15 by jshestov         ###   ########.fr        #
+#    Updated: 2022/12/28 15:05:04 by jshestov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
 	@echo "Linking $@"
-	@$(CC) -o $(NAME) $(OBJS)
+	@$(CC) -o $(NAME) $(OBJS) $(LIBFT)
 	@echo "Done!"
 
 $(OBJS): $(BUILD_DIR)/%.o: $(SRC_DIR)/%.c

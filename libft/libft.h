@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:53:19 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 12:50:18 by jshestov         ###   ########.fr       */
+/*   Updated: 2022/12/28 15:12:11 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <string.h>
+# include "ft_printf.h"
+# include "get_next_line.h"
 
 typedef struct s_list
 {
