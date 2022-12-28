@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 13:05:47 by jshestov         ###   ########.fr       */
+/*   Created: 2022/11/30 09:39:19 by jshestov          #+#    #+#             */
+/*   Updated: 2022/11/30 09:49:40 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
+#include <stdlib.h>
 
-int	main()
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	printf("Hello");
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

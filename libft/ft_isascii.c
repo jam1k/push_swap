@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 13:05:47 by jshestov         ###   ########.fr       */
+/*   Created: 2022/10/26 09:28:56 by jshestov          #+#    #+#             */
+/*   Updated: 2022/11/09 09:28:05 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	main()
+int	ft_isascii(int argument)
 {
-	printf("Hello");
+	if ((int) argument >= 0 && (int) argument <= 127)
+		return (1);
+	else
+		return (0);
 }

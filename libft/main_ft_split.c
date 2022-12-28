@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main_ft_split.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 13:05:47 by jshestov         ###   ########.fr       */
+/*   Created: 2022/10/31 13:18:16 by jshestov          #+#    #+#             */
+/*   Updated: 2022/11/30 13:29:56 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include "libft.h"
 
-int	main()
+int	main(void)
 {
-	printf("Hello");
+	char	**test;
+
+	test = ft_split("        ", ' ');
+	printf("test %s", test[0]);
+	return (0);
 }

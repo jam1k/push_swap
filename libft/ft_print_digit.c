@@ -1,18 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_print_digit.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 13:05:47 by jshestov         ###   ########.fr       */
+/*   Created: 2022/11/22 09:35:22 by jshestov          #+#    #+#             */
+/*   Updated: 2022/11/30 09:18:53 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_printf.h"
 
-int	main()
+int	ft_print_d(int num)
 {
-	printf("Hello");
+	int	num_bytes;
+
+	num_bytes = 0;
+	num_bytes += ft_print_nbr(num);
+	return (num_bytes);
 }

@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 13:05:47 by jshestov         ###   ########.fr       */
+/*   Created: 2022/07/06 11:41:14 by jshestov          #+#    #+#             */
+/*   Updated: 2022/10/28 10:12:24 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <stdlib.h>
+#include "libft.h"
 
-int	main()
+char	*ft_strdup(const char *src)
 {
-	printf("Hello");
+	char	*copy;
+	int		length;
+	int		index;
+
+	index = 0;
+	length = ft_strlen(src);
+	copy = (char *) malloc (sizeof (*src) * (length + 1));
+	if (!copy)
+		return (NULL);
+	while (src[index] != '\0')
+	{
+		copy[index] = src[index];
+		index++;
+	}
+	copy[index] = '\0';
+	return (copy);
 }

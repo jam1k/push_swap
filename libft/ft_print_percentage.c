@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_print_percentage.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jamilya <jamilya@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 13:05:47 by jshestov         ###   ########.fr       */
+/*   Created: 2022/11/21 12:05:12 by jshestov          #+#    #+#             */
+/*   Updated: 2022/11/21 21:59:52 by jamilya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "ft_printf.h"
 
-int	main()
+int	ft_print_percentage(void)
 {
-	printf("Hello");
+	ft_putchar_fd('%', 1);
+	return (1);
 }

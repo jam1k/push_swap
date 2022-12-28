@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 13:05:47 by jshestov         ###   ########.fr       */
+/*   Created: 2022/10/24 18:12:36 by jshestov          #+#    #+#             */
+/*   Updated: 2022/11/02 09:28:39 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	main()
+void	*ft_memset(void *str, int c, size_t n)
 {
-	printf("Hello");
+	size_t			index;
+	unsigned char	*string;
+
+	string = (unsigned char *)str;
+	index = 0;
+	while (index < n)
+	{
+		string[index] = (unsigned char) c;
+		index++;
+	}
+	return (str);
 }

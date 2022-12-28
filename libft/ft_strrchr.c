@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 13:05:47 by jshestov         ###   ########.fr       */
+/*   Created: 2022/10/26 15:54:50 by jshestov          #+#    #+#             */
+/*   Updated: 2022/11/09 14:41:03 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	main()
+char	*ft_strrchr(const char *s, int c)
 {
-	printf("Hello");
+	int		index;
+	char	*string;
+
+	string = (char *)s;
+	index = ft_strlen(string);
+	while (index >= 0)
+	{
+		if (string[index] == (unsigned char)c)
+			return (&string[index]);
+		index--;
+	}
+	return (0);
 }
