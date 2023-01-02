@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 18:53:19 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 15:12:11 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:00:56 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,13 @@
 # define LIBFT_H
 
 # include <string.h>
-# include "ft_printf.h"
-# include "get_next_line.h"
+# include <stdarg.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 
 typedef struct s_list
 {
@@ -68,5 +73,24 @@ int		ft_lstsize(t_list *lst);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-
+int		ft_printf(const char *placeholders, ...);
+int		ft_print_c(char c);
+int		ft_print_s(char	*s);
+int		ft_print_p(void *p);
+int		ft_print_d(int num);
+int		ft_print_i(int num);
+int		ft_print_u(unsigned int unum);
+int		ft_print_x(int num);
+int		ft_print_upper_x(int nb);
+int		ft_print_percentage(void);
+int		ft_print_nbr(int nb);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putnbr_fd(int nb, int fd);
+size_t	ft_strlen(const char *str);
+char	*get_next_line(int fd);
+size_t	ft_strlen(const char *str);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strdup(const char *src);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 #endif

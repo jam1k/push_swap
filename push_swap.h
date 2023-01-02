@@ -6,13 +6,17 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:08:29 by jshestov          #+#    #+#             */
-/*   Updated: 2022/12/28 15:10:38 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/02 10:39:15 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "./libft/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+
+# include "../libft/libft.h"
+
 
 #endif

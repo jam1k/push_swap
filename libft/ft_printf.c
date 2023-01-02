@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jamilya <jamilya@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 14:32:49 by jshestov          #+#    #+#             */
-/*   Updated: 2022/11/21 22:37:07 by jamilya          ###   ########.fr       */
+/*   Updated: 2023/01/02 11:08:41 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	check_input(char ch, va_list arguments)
 {

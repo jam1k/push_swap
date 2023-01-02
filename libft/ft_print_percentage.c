@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_percentage.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jamilya <jamilya@student.42.fr>            +#+  +:+       +#+        */
+/*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/21 12:05:12 by jshestov          #+#    #+#             */
-/*   Updated: 2022/11/21 21:59:52 by jamilya          ###   ########.fr       */
+/*   Updated: 2023/01/02 11:08:19 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 int	ft_print_percentage(void)
 {

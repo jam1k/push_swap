@@ -6,11 +6,11 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:38:41 by jshestov          #+#    #+#             */
-/*   Updated: 2022/11/22 09:38:42 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:08:23 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	ft_pointer_len(unsigned long int pointer)
 {

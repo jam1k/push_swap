@@ -6,11 +6,11 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:19:35 by jshestov          #+#    #+#             */
-/*   Updated: 2022/11/28 11:24:21 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:09:14 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static void	return_line(char **line, char **buffer_str)
 {

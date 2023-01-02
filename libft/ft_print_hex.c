@@ -6,11 +6,11 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/22 09:35:58 by jshestov          #+#    #+#             */
-/*   Updated: 2022/11/22 09:37:03 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:08:14 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
 static int	ft_hex_len(unsigned int hex_num)
 {

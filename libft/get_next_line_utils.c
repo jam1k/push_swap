@@ -6,11 +6,11 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 10:33:47 by jshestov          #+#    #+#             */
-/*   Updated: 2022/11/28 11:30:51 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/02 11:09:08 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 size_t	ft_strlen(const char *str)
 {
