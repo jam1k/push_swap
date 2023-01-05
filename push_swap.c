@@ -6,13 +6,13 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/05 13:43:09 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/05 16:18:32 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	error_handling(int argc, char **argv)
+static int	error_handling(int argc, char **argv)
 {
 	int	i;
 
@@ -31,40 +31,29 @@ int	error_handling(int argc, char **argv)
 	return (1);
 }
 
-void free_node (t_list *node)
+static t_stack	*read_the_input(int argc, char **argv)
 {
-	free(node);
-}
-
-t_list	**read_the_input(int argc, char **argv)
-{
-	t_list	*new_node;
-	t_list	**a_stack;
+	t_stack	*new_node;
+	t_stack	*a_stack;
 	int		i;
-	int		content;
-	int		*p;
 
-	a_stack = NULL;
 
-	i = 1;
+	a_stack = ft_stacknew(ft_atoi(argv[1]));
+	i = 2;
 	while (i < argc)
 	{
-		content = ft_atoi(argv[i]);
-		ft_printf("content = %d\n", content);
-		new_node = ft_lstnew(&content);
-		p = (new_node->content);
-		ft_printf("content of new node %d\n", *p);
-		ft_lstadd_back(a_stack, new_node);
-		ft_printf("a_stack = ");
-		print_list(*a_stack, print_int);
-		free(new_node);
+		new_node = ft_stacknew(ft_atoi(argv[i]));
+		ft_stackadd_back(&a_stack, new_node);
+
 		i++;
 	}
-	return (a_stack);
-}
 
-void	save_to_stack(void)
-{
+	while (a_stack)
+		{
+			ft_printf("a_stack = %d\n", a_stack->content);
+			a_stack = a_stack->next;
+		}
+	return (a_stack);
 }
 
 int	main(int argc, char **argv)
