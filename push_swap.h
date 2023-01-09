@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:08:29 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/09 15:38:30 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:57:19 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	ft_stackadd_back(t_stack **lst, t_stack *new);
 t_stack	*ft_stacknew(int content);
 int		ft_stacksize(t_stack *lst);
 t_stack	*ft_stacklast(t_stack *lst);
-void	swap_a(t_stack *a_stack);
-void	swap_b(t_stack *b_stack);
-void	swap_a_b(t_stack *a_stack, t_stack *b_stack);
+void	swap_a(t_stack **a_stack);
+void	swap_b(t_stack **b_stack);
+void	swap_a_b(t_stack **a_stack, t_stack **b_stack);
 void	push_a(t_stack *a_stack, t_stack *b_stack);
 void	push_b(t_stack *a_stack, t_stack *b_stack);
 void	rotate_a(t_stack *a_stack);
