@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:45:59 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/05 16:08:43 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/09 14:48:10 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,14 @@ t_stack	*ft_stacklast(t_stack *lst)
 	}
 	return (lst);
 }
+
+/* void	ft_stackdelone(t_stack *lst, void (*del)(void*))
+{
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
+} */
 /* void	ft_lstadd_front(t_stack **lst, t_stack *new)
 {
 	t_stack	*tmp;
@@ -83,13 +91,7 @@ void	ft_lstclear(t_stack **lst, void (*del)(void*))
 	}
 } */
 
-/* void	ft_lstdelone(t_stack *lst, void (*del)(void*))
-{
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
-}
+/*
 
 void	ft_lstiter(t_stack *lst, void (*f)(void *))
 {

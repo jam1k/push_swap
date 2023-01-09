@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:42:21 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/09 13:38:07 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:50:07 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	swap_a(t_stack *a_stack)
 		first->next = second->next;
 		second->next = temp;
 	}
+	print_list(a_stack);
 }
 
 void	swap_b(t_stack *b_stack)
@@ -48,6 +49,7 @@ void	swap_b(t_stack *b_stack)
 		first->next = second->next;
 		second->next = temp;
 	}
+	print_list(b_stack);
 }
 
 void	swap_a_b(t_stack *a_stack, t_stack *b_stack)
@@ -56,12 +58,29 @@ void	swap_a_b(t_stack *a_stack, t_stack *b_stack)
 	swap_b(b_stack);
 }
 
-void	push_a(t_stack *a_stack)
+void	push_a(t_stack *a_stack, t_stack *b_stack)
 {
+	t_stack *elem;
+	t_stack	*tmp;
+
+	elem = b_stack;
+	tmp = a_stack;
+	a_stack = elem;
+	elem->next = tmp;
+	b_stack = b_stack->next;
 	print_list(a_stack);
 }
 
-void	push_b(t_stack *b_stack)
+void	push_b(t_stack *a_stack, t_stack *b_stack)
 {
+	t_stack *elem;
+	t_stack	*tmp;
+
+	elem = a_stack;
+	tmp = b_stack;
+	b_stack = elem;
+	b_stack->next = tmp;
+	a_stack = a_stack->next;
+	free(elem);
 	print_list(b_stack);
 }
