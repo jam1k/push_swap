@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/09 10:40:14 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/09 10:46:59 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ static t_stack	*read_the_input(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_stack	*a_stack;
+
 	if (!error_handling(argc, argv))
 		return (1);
 	a_stack = read_the_input(argc, argv);
