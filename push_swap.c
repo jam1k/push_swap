@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/05 16:18:32 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/09 10:40:14 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,33 @@ static int	error_handling(int argc, char **argv)
 	return (1);
 }
 
+static int	check_duplicates(t_stack *a_stack)
+{
+	t_stack	*current;
+	t_stack	*next;
+
+	if (!a_stack)
+		return (0);
+	current = a_stack;
+	while (current)
+	{
+		next = current->next;
+		while (next)
+		{
+			if (current->content == next->content)
+				return (0);
+			next = next->next;
+		}
+		current = current->next;
+	}
+	return (1);
+}
+
 static t_stack	*read_the_input(int argc, char **argv)
 {
 	t_stack	*new_node;
 	t_stack	*a_stack;
 	int		i;
-
 
 	a_stack = ft_stacknew(ft_atoi(argv[1]));
 	i = 2;
@@ -44,22 +65,23 @@ static t_stack	*read_the_input(int argc, char **argv)
 	{
 		new_node = ft_stacknew(ft_atoi(argv[i]));
 		ft_stackadd_back(&a_stack, new_node);
-
 		i++;
 	}
-
-	while (a_stack)
-		{
-			ft_printf("a_stack = %d\n", a_stack->content);
-			a_stack = a_stack->next;
-		}
+	if (!check_duplicates(a_stack))
+	{
+		write(2, "Error\n", 6);
+		return (0);
+	}
 	return (a_stack);
 }
 
 int	main(int argc, char **argv)
 {
+	t_stack	*a_stack;
 	if (!error_handling(argc, argv))
 		return (1);
-	read_the_input(argc, argv);
+	a_stack = read_the_input(argc, argv);
+	if (!a_stack)
+		return (2);
 	return (0);
 }
