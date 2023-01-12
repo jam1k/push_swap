@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:08:29 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/10 12:17:16 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/12 09:32:11 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct s_stack
 void	print_list(t_stack *node);
 void	print_int(int *n);
 void	ft_stackadd_back(t_stack **lst, t_stack *new);
+void	ft_stackadd_front(t_stack **stack_head, t_stack *new);
 t_stack	*ft_stacknew(int content);
 int		ft_stacksize(t_stack *lst);
 t_stack	*ft_stacklast(t_stack *lst);

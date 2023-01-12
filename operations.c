@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:42:21 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/10 12:26:29 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/12 09:36:01 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,25 +58,24 @@ void	swap_a_b(t_stack **a_stack, t_stack **b_stack)
 
 void	push_a(t_stack **a_stack, t_stack **b_stack)
 {
-	t_stack *elem;
+	t_stack	*elem;
 
 	if (!*a_stack || !*b_stack)
 		return ;
 	elem = *b_stack;
-	ft_stackadd_back(a_stack, elem);
-	delete_head(b_stack);
+	*b_stack = (*b_stack)->next;
+	elem->next = NULL;
+	ft_stackadd_front(a_stack, elem);
 }
 
 void	push_b(t_stack **a_stack, t_stack **b_stack)
 {
-	t_stack *elem;
-	t_stack	*tmp;
+	t_stack	*elem;
 
 	if (!*a_stack || !*b_stack)
 		return ;
 	elem = *a_stack;
-	tmp = *b_stack;
-	*b_stack = elem;
-	elem->next = tmp;
 	*a_stack = (*a_stack)->next;
+	elem->next = NULL;
+	ft_stackadd_front(b_stack, elem);
 }
