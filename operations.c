@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:42:21 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/09 15:59:51 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:26:29 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,30 +56,27 @@ void	swap_a_b(t_stack **a_stack, t_stack **b_stack)
 	swap_b(b_stack);
 }
 
-void	push_a(t_stack *a_stack, t_stack *b_stack)
+void	push_a(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack *elem;
-	t_stack	*tmp;
 
-	elem = b_stack;
-	tmp = a_stack;
-	a_stack = elem;
-	elem->next = tmp;
-	b_stack = b_stack->next;
-	print_list(a_stack);
-	print_list(b_stack);
+	if (!*a_stack || !*b_stack)
+		return ;
+	elem = *b_stack;
+	ft_stackadd_back(a_stack, elem);
+	delete_head(b_stack);
 }
 
-void	push_b(t_stack *a_stack, t_stack *b_stack)
+void	push_b(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack *elem;
 	t_stack	*tmp;
 
-	elem = a_stack;
-	tmp = b_stack;
-	b_stack = elem;
-	b_stack->next = tmp;
-	a_stack = a_stack->next;
-	free(elem);
-	print_list(b_stack);
+	if (!*a_stack || !*b_stack)
+		return ;
+	elem = *a_stack;
+	tmp = *b_stack;
+	*b_stack = elem;
+	elem->next = tmp;
+	*a_stack = (*a_stack)->next;
 }

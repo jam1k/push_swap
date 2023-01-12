@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/09 15:58:13 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:26:47 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,10 +87,15 @@ int	main(int argc, char **argv)
 	if (!a_stack)
 		return (2);
 
-	b_stack = ft_stacknew(3);
-	ft_stackadd_back(&b_stack, ft_stacknew(1));
-	swap_a_b(&a_stack, &b_stack);
+	b_stack = ft_stacknew(40);
+
+	ft_stackadd_back(&b_stack, ft_stacknew(20));
+	ft_printf("initial b_stack\n");
+	print_list(b_stack);
+	push_a(&a_stack, &b_stack);
+	ft_printf("a_stack after push\n");
 	print_list(a_stack);
+	ft_printf("b_stack after push\n");
 	print_list(b_stack);
 	return (0);
 }

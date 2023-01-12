@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:45:59 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/09 14:48:10 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/10 12:18:29 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,16 @@ t_stack	*ft_stacklast(t_stack *lst)
 	return (lst);
 }
 
+void delete_head(t_stack **head)
+{
+	t_stack	*temp;
+
+	if (!head || !*head)
+		return ;
+	temp = *head;
+	*head = (*head)->next;
+	free(temp);
+}
 /* void	ft_stackdelone(t_stack *lst, void (*del)(void*))
 {
 	if (!lst || !del)
