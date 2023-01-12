@@ -6,27 +6,49 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/12 11:46:00 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/12 15:15:00 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	error_handling(int argc, char **argv)
+static int	is_digit(int argc, char **argv)
+/* check that parameters are digits*/
 {
 	int	i;
+	int	j;
+	int	len;
+	int	val;
 
-	if (argc < 2)
-		return (0);
 	i = 1;
 	while (i < argc)
 	{
-		if (!ft_atoi(argv[i]) || ft_atoi(argv[i]) < 0)
+		len = ft_strlen(argv[i]);
+		j = 0;
+		while (j < len)
 		{
-			write(2, "Error\n", 6);
-			return (0);
+			if (!ft_isdigit(argv[i][j]))
+			{
+				return (0);
+			}
+			j++;
 		}
+		val = ft_atoi(argv[i]);
+		if (val < -2147483648 || val > 2147483647)
+			return (0);
 		i++;
+	}
+	return (1);
+}
+
+static int	error_handling(int argc, char **argv)
+{
+	if (argc < 2)
+		return (0);
+	if (!is_digit(argc, argv))
+	{
+		write(2, "Error\n", 6);
+		return (0);
 	}
 	return (1);
 }
@@ -75,8 +97,6 @@ static t_stack	*read_the_input(int argc, char **argv)
 	return (a_stack);
 }
 
-
-
 int	main(int argc, char **argv)
 {
 	t_stack	*a_stack;
@@ -91,11 +111,6 @@ int	main(int argc, char **argv)
 	ft_stackadd_back(&b_stack, ft_stacknew(20));
 	ft_printf("initial b_stack\n");
 	print_list(b_stack);
-	reverse_rotate_a(&a_stack);
-	ft_printf("a_stack after reverse rotate\n");
 	print_list(a_stack);
-	reverse_rotate_b(&b_stack);
-	ft_printf("b_stack after reverse rotate\n");
-	print_list(b_stack);
 	return (0);
 }
