@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/13 13:26:12 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/13 14:37:37 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,16 @@ static int	is_digit(int argc, char **argv)
 				return (0);
 			j++;
 		}
-		val = ft_atoi(argv[i]);
-		if (val < -2147483648 || val > 2147483647)
+		val = ft_atoi_intmin_intmax(argv[i]);
+		if ((val == 1 && len > 1))
+			return (0);
+		else if (val == -1 && len > 2)
 			return (0);
 		i++;
 	}
 	return (1);
 }
+
 
 static int	error_handling(int argc, char **argv)
 {
