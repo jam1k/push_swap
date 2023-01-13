@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:08:29 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/13 10:02:21 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/13 10:26:02 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 typedef struct s_stack
 {
 	int				content;
+	int				index;
 	struct s_stack	*next;
 }	t_stack;
 

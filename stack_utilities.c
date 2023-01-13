@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:45:59 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/12 09:33:46 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/13 11:02:02 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_stackadd_back(t_stack **lst, t_stack *new)
 	}
 	last = ft_stacklast(*lst);
 	last->next = new;
+	new->index = last->index + 1;
 }
 
 t_stack	*ft_stacknew(int content)
@@ -31,6 +32,7 @@ t_stack	*ft_stacknew(int content)
 
 	new_node = (t_stack *) malloc(sizeof(t_stack));
 	new_node->content = content;
+	new_node->index = 0;
 	new_node->next = NULL;
 	return (new_node);
 }
@@ -64,10 +66,19 @@ t_stack	*ft_stacklast(t_stack *lst)
 void	ft_stackadd_front(t_stack **stack_head, t_stack *new)
 {
 	t_stack	*tmp;
+	int		i;
 
 	tmp = *stack_head;
 	*stack_head = new;
 	new->next = tmp;
+	tmp = *stack_head;
+	i = 0;
+	while (tmp)
+	{
+		tmp->index = i;
+		tmp = tmp->next;
+		i++;
+	}
 }
 /* void	ft_stackdelone(t_stack *lst, void (*del)(void*))
 {
