@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/12 15:15:00 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/13 09:30:46 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ static int	is_digit(int argc, char **argv)
 	{
 		len = ft_strlen(argv[i]);
 		j = 0;
+		if (argv[i][j] == '-' || argv[i][j] == '+')
+			j++;
 		while (j < len)
 		{
 			if (!ft_isdigit(argv[i][j]))
-			{
 				return (0);
-			}
 			j++;
 		}
 		val = ft_atoi(argv[i]);
