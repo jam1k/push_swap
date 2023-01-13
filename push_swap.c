@@ -6,19 +6,17 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/13 14:37:37 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/13 15:36:12 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 static int	is_digit(int argc, char **argv)
-/* check that parameters are digits*/
 {
 	int	i;
 	int	j;
 	int	len;
-	int	val;
 
 	i = 1;
 	while (i < argc)
@@ -27,22 +25,20 @@ static int	is_digit(int argc, char **argv)
 		j = 0;
 		if (argv[i][j] == '-' || argv[i][j] == '+')
 			j++;
+		if (j == len)
+			return (0);
 		while (j < len)
 		{
 			if (!ft_isdigit(argv[i][j]))
 				return (0);
 			j++;
 		}
-		val = ft_atoi_intmin_intmax(argv[i]);
-		if ((val == 1 && len > 1))
-			return (0);
-		else if (val == -1 && len > 2)
+		if ((ft_atoi_zero(argv[i]) == 0 && len > 1))
 			return (0);
 		i++;
 	}
 	return (1);
 }
-
 
 static int	error_handling(int argc, char **argv)
 {
@@ -85,17 +81,20 @@ static t_stack	*read_the_input(int argc, char **argv)
 	int		i;
 
 	a_stack = ft_stacknew(ft_atoi(argv[1]));
-	i = 2;
-	while (i < argc)
+	if (argc > 3)
 	{
-		new_node = ft_stacknew(ft_atoi(argv[i]));
-		ft_stackadd_back(&a_stack, new_node);
-		i++;
-	}
-	if (!check_duplicates(a_stack))
-	{
-		write(2, "Error\n", 6);
-		return (0);
+		i = 2;
+		while (i < argc)
+		{
+			new_node = ft_stacknew(ft_atoi(argv[i]));
+			ft_stackadd_back(&a_stack, new_node);
+			i++;
+		}
+		if (!check_duplicates(a_stack))
+		{
+			write(2, "Error\n", 6);
+			return (0);
+		}
 	}
 	return (a_stack);
 }
@@ -105,6 +104,8 @@ int	main(int argc, char **argv)
 	t_stack	*a_stack;
 	t_stack	*b_stack;
 
+	if (argc < 2)
+		return (1);
 	if (!error_handling(argc, argv))
 		return (1);
 	a_stack = read_the_input(argc, argv);

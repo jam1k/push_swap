@@ -6,47 +6,35 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 13:31:24 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/13 14:31:33 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/13 14:59:40 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static int	check_overflow(int sign)
+long	ft_atoi_zero(const char *str)
 {
-	if (sign == 1)
-		return (-1);
-	else
-		return (0);
-}
+	int			i;
+	int			sign;
+	long		result;
 
-int	ft_atoi_intmin_intmax(const char *str)
-{
-	long long int	sum;
-	int				sign;
-	int				index;
-
-	sum = 0;
+	i = 0;
 	sign = 1;
-	index = 0;
-	while (str[index] == '\f' || str[index] == '\t' || str[index] == '\n'
-		|| str[index] == '\r' || str[index] == '\v' || str[index] == ' ')
-		index++;
-	if (str[index] == '-')
+	result = 0;
+	while ((str[i] == ' ') || (str[i] == '\n') || (str[i] == '\t')
+		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'))
+			i++;
+	if (str[i] == '-')
 		sign *= -1;
-	if (str[index] == '-' || str[index] == '+')
-		index++;
-	while (str[index] >= '0' && str[index] <= '9')
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i] >= '0' && str[i] <= '9')
 	{
-		sum = sum * 10 + str[index] - '0';
-		if (sum < 0)
-		{
-			sum = check_overflow(sign);
-			return ((int)sum);
-		}
-		else if (sum > 2147483647 && sign == 1)
+		result = ((result * 10) + (str[i] - '0'));
+		if (result > 2147483647 && sign == 1)
 			return (0);
-		else if (sum > 2147483648 && sign == -1)
+		if (result > 2147483648 && sign == -1)
 			return (0);
-		index++;
+		i++;
 	}
-	return ((int)sum * sign);
+	result = result * sign;
+	return ((int)result);
 }
