@@ -6,36 +6,11 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:08:10 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/16 10:00:11 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/16 14:43:56 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	find_minmax_index(t_stack **a_stack, int *min_index, int *max_index)
-{
-	t_stack	*current;
-	int		max;
-	int		min;
-
-	current = *a_stack;
-	min = current->content;
-	max = current->content;
-	while (current)
-	{
-		if (current->content > max)
-		{
-			max = current->content;
-			*max_index = current->index;
-		}
-		if (current->content < min)
-		{
-			min = current->content;
-			*min_index = current->index;
-		}
-		current = current->next;
-	}
-}
 
 static void	ft_sort_helper(t_stack **a_stack, int *min_index, int *max_index)
 {
@@ -64,6 +39,7 @@ void	ft_sort_three_numbers(t_stack **a_stack)
 
 	min_index = 0;
 	max_index = 0;
-	find_minmax_index(a_stack, &min_index, &max_index);
+	find_min_index(a_stack, &min_index);
+	find_max_index(a_stack, &max_index);
 	ft_sort_helper(a_stack, &min_index, &max_index);
 }

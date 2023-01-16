@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:42:21 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/13 09:48:02 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/16 16:12:07 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ void	swap_a(t_stack **a_stack)
 	if (second)
 	{
 		(*a_stack) = second;
+		(*a_stack)->index = 0;
 		temp = first;
+		temp->index = 1;
 		first->next = second->next;
 		second->next = temp;
 	}
@@ -45,7 +47,9 @@ void	swap_b(t_stack **b_stack)
 	if (second)
 	{
 		(*b_stack) = second;
+		(*b_stack)->index = 0;
 		temp = first;
+		temp->index = 1;
 		first->next = second->next;
 		second->next = temp;
 	}
@@ -65,7 +69,9 @@ void	swap_a_b(t_stack **a_stack, t_stack **b_stack)
 	if (second)
 	{
 		(*a_stack) = second;
+		(*a_stack)->index = 0;
 		temp = first;
+		temp->index = 1;
 		first->next = second->next;
 		second->next = temp;
 	}
@@ -74,7 +80,9 @@ void	swap_a_b(t_stack **a_stack, t_stack **b_stack)
 	if (second)
 	{
 		(*b_stack) = second;
+		(*b_stack)->index = 0;
 		temp = first;
+		temp->index = 1;
 		first->next = second->next;
 		second->next = temp;
 	}
@@ -85,7 +93,7 @@ void	push_a(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*elem;
 
-	if (!*a_stack || !*b_stack)
+	if (!*b_stack)
 		return ;
 	elem = *b_stack;
 	*b_stack = (*b_stack)->next;
@@ -98,7 +106,7 @@ void	push_b(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*elem;
 
-	if (!*a_stack || !*b_stack)
+	if (!*a_stack)
 		return ;
 	elem = *a_stack;
 	*a_stack = (*a_stack)->next;
