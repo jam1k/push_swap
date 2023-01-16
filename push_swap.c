@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/13 15:36:12 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/16 10:42:42 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static t_stack	*read_the_input(int argc, char **argv)
 	int		i;
 
 	a_stack = ft_stacknew(ft_atoi(argv[1]));
-	if (argc > 3)
+	if (argc >= 3)
 	{
 		i = 2;
 		while (i < argc)
@@ -107,12 +107,13 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (1);
 	if (!error_handling(argc, argv))
-		return (1);
+		return (2);
 	a_stack = read_the_input(argc, argv);
 	if (!a_stack)
-		return (2);
+		return (3);
 	b_stack = NULL;
-	if (ft_stacksize(a_stack) == 1)
+
+	if (stack_is_sorted(&a_stack))
 		return (0);
 	else if (ft_stacksize(a_stack) == 2)
 	{
@@ -122,6 +123,6 @@ int	main(int argc, char **argv)
 	{
 		ft_sort_three_numbers(&a_stack);
 	}
-	print_list(a_stack);
+	//print_list(a_stack);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 10:18:43 by jshestov          #+#    #+#              #
-#    Updated: 2023/01/13 13:53:29 by jshestov         ###   ########.fr        #
+#    Updated: 2023/01/16 10:23:50 by jshestov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 
 BUILD_DIR	= build
 SRC_DIR		= ./
-SRCS		= 	push_swap.c print_list.c stack_utilities.c operations.c operations2.c operations3.c sorting.c ft_atoi_check.c
+SRCS		= 	push_swap.c print_list.c stack_utilities.c operations.c operations2.c operations3.c ft_atoi_check.c \
+				sort_two_numbers.c sort_three_numbers.c sort_five_numbers.c stack_is_sorted.c
 
 OBJS = $(SRCS:%.c=$(BUILD_DIR)/%.o)
 

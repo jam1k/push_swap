@@ -1,27 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting.c                                          :+:      :+:    :+:   */
+/*   sort_three_numbers.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 11:08:10 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/13 13:28:50 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/16 10:00:11 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	ft_sort_two_numbers(t_stack **a_stack)
-{
-	t_stack	*last;
-
-	last = ft_stacklast(*a_stack);
-	if ((*a_stack)->content < last->content)
-		return ;
-	else
-		swap_a(a_stack);
-}
 
 static void	find_minmax_index(t_stack **a_stack, int *min_index, int *max_index)
 {

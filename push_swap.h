@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:08:29 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/13 14:57:59 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/16 10:21:31 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,7 @@ void	reverse_rotate_a_b(t_stack **a_stack, t_stack **b_stack, t_stack *prev);
 void	delete_head(t_stack **head);
 void	ft_sort_two_numbers(t_stack **a_stack);
 void	ft_sort_three_numbers(t_stack **a_stack);
+void	ft_sort_five_numbers(t_stack **a_stack, t_stack **b_stack);
+int		stack_is_sorted(t_stack **a_stack);
 
 #endif
