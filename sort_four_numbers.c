@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 14:44:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/16 15:24:29 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:23:01 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	ft_sort_four_numbers(t_stack **a_stack, t_stack **b_stack)
 	print_list(*a_stack);
 	print_list(*b_stack);
 	ft_sort_three_numbers(a_stack);
-
 	//push_a(a_stack, b_stack);
 	if (stack_is_sorted(a_stack))
 		return ;

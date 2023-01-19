@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:42:21 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/16 16:12:07 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:22:01 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,34 +58,17 @@ void	swap_b(t_stack **b_stack)
 
 void	swap_a_b(t_stack **a_stack, t_stack **b_stack)
 {
-	t_stack	*first;
-	t_stack	*second;
-	t_stack	*temp;
+	t_stack	*temp_a;
+	t_stack	*temp_b;
 
-	if (!*a_stack || !*b_stack)
-		return ;
-	first = *a_stack;
-	second = (*a_stack)->next;
-	if (second)
-	{
-		(*a_stack) = second;
-		(*a_stack)->index = 0;
-		temp = first;
-		temp->index = 1;
-		first->next = second->next;
-		second->next = temp;
-	}
-	first = *b_stack;
-	second = (*b_stack)->next;
-	if (second)
-	{
-		(*b_stack) = second;
-		(*b_stack)->index = 0;
-		temp = first;
-		temp->index = 1;
-		first->next = second->next;
-		second->next = temp;
-	}
+	temp_a = (*a_stack)->next;
+	temp_b = (*b_stack)->next;
+	(*a_stack)->next = temp_a->next;
+	temp_a->next = *a_stack;
+	*a_stack = temp_a;
+	(*b_stack)->next = temp_b->next;
+	temp_b->next = *b_stack;
+	*b_stack = temp_b;
 	ft_printf("ss\n");
 }
 
