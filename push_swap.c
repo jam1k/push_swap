@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/20 12:52:38 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:06:24 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,10 @@ int	main(int argc, char **argv)
 		return (1);
 	if (!error_handling(argc, argv))
 		return (2);
-	a_stack = read_the_input(argc, argv);
+	if (argc == 2)
+		a_stack = read_the_input(argc, ft_split(argv[1], ' '));
+	else
+		a_stack = read_the_input(argc, argv);
 	if (!a_stack)
 		return (3);
 	b_stack = ft_stacknew(20);
@@ -123,6 +126,8 @@ int	main(int argc, char **argv)
 		ft_sort_four_numbers(&a_stack, &b_stack);
 	else if (ft_stacksize(a_stack) == 5)
 		ft_sort_five_numbers(&a_stack, &b_stack);
+	else
+		ft_sort_more_numbers(&a_stack, &b_stack);
 	//print_list(a_stack);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:08:29 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/20 11:05:02 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/20 13:25:05 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,11 @@ void	delete_head(t_stack **head);
 void	ft_sort_two_numbers(t_stack **a_stack);
 void	ft_sort_three_numbers(t_stack **a_stack);
 void	ft_sort_five_numbers(t_stack **a_stack, t_stack **b_stack);
+void	ft_sort_more_numbers(t_stack **a_stack, t_stack **b_stack);
 int		stack_is_sorted(t_stack **a_stack);
 void	ft_sort_four_numbers(t_stack **a_stack, t_stack **b_stack);
 void	find_min_index(t_stack **a_stack, int *min_index);
 void	find_max_index(t_stack **a_stack, int *max_index);
+
 
 #endif
