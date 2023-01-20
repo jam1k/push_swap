@@ -6,12 +6,11 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 12:57:41 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/20 13:33:58 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:54:21 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 static void	sort_more_helper(t_stack **a_stack, t_stack **b_stack,
 	int num_elem, int min_index)

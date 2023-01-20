@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:01:32 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/20 12:51:09 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/20 14:45:10 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static void	sort_five_helper(t_stack **a_stack, t_stack **b_stack,
 	int num_elem, int min_index)
 {
-	num_elem = 2;
 	while (num_elem)
 	{
 		min_index = 0;
