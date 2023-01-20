@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/09 10:42:21 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/19 11:22:01 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/19 11:33:54 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,18 @@ void	swap_a_b(t_stack **a_stack, t_stack **b_stack)
 {
 	t_stack	*temp_a;
 	t_stack	*temp_b;
+	int		temp_index;
 
+	if (!*a_stack || !*b_stack)
+		return ;
 	temp_a = (*a_stack)->next;
 	temp_b = (*b_stack)->next;
+	temp_index = (*a_stack)->index;
+    (*a_stack)->index = temp_a->index;
+    temp_a->index = temp_index;
+    temp_index = (*b_stack)->index;
+    (*b_stack)->index = temp_b->index;
+    temp_b->index = temp_index;
 	(*a_stack)->next = temp_a->next;
 	temp_a->next = *a_stack;
 	*a_stack = temp_a;

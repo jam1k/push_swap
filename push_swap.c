@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/19 11:22:29 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/20 09:34:44 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,6 +122,6 @@ int	main(int argc, char **argv)
 	else if (ft_stacksize(a_stack) == 4)
 		ft_sort_four_numbers(&a_stack, &b_stack);
 	print_list(a_stack);
-	swap_a_b(&a_stack, &b_stack);
+
 	return (0);
 }
