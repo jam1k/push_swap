@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:08:29 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/20 14:54:33 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/24 09:31:50 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,6 @@ int		stack_is_sorted(t_stack **a_stack);
 void	ft_sort_four_numbers(t_stack **a_stack, t_stack **b_stack);
 void	find_min_index(t_stack **a_stack, int *min_index);
 void	find_max_index(t_stack **a_stack, int *max_index);
+void	rotate_or_reverse_rotate(t_stack **a_stack);
 
 #endif
