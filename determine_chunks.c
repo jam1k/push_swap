@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 10:26:19 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/24 10:27:40 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/25 10:36:26 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@ int	determine_chunks(int stack_size)
 {
 	if (stack_size == 100)
 		return (5);
-	if (stack_size == 500)
-		return (11);
+	return (11);
 }

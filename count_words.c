@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_hundred_numbers.c                             :+:      :+:    :+:   */
+/*   count_words.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 10:32:19 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/25 10:35:08 by jshestov         ###   ########.fr       */
+/*   Created: 2023/01/25 10:44:03 by jshestov          #+#    #+#             */
+/*   Updated: 2023/01/25 11:41:57 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-void	ft_sort_hundred_numbers(t_stack **a_stack, t_stack **b_stack)
+int	count_words(const char *str, char c)
 {
-	t_stack	*current;
-	int		chunks;
-	int		i;
+	int	i;
+	int	trigger;
 
-	if (!*a_stack)
-		return ;
-	chunks = determine_chunks(ft_stacksize(*a_stack));
-	current = *a_stack;
-	i = 1;
-	while (i <= chunks)
+	i = 0;
+	trigger = 0;
+	while (*str)
 	{
-		while (current)
+		if (*str != c && trigger == 0)
 		{
-			if (current->content < i * 20)
-				break ;
+			trigger = 1;
+			i++;
 		}
-		chunks--;
+		else if (*str == c)
+			trigger = 0;
+		str++;
 	}
-	print_list(*b_stack);
+	return (i);
 }

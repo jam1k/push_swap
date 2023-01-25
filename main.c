@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:05:44 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/24 09:36:56 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:31:36 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,13 +80,17 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a_stack;
 	t_stack	*b_stack;
+	char	**arr;
 
 	if (argc < 2)
 		return (1);
 	if (!error_handling(argc, argv))
 		return (2);
 	if (argc == 2)
-		a_stack = read_the_input(argc, ft_split(argv[1], ' '));
+	{
+		arr = create_argv(1 + count_words(argv[1], ' '), argv);
+		a_stack = read_the_input(1 + count_words(argv[1], ' '), arr);
+	}
 	else
 		a_stack = read_the_input(argc, argv);
 	if (!a_stack)

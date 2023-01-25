@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:08:29 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/24 10:42:59 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/25 13:32:14 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ typedef struct s_stack
 	int				content;
 	int				index;
 	struct s_stack	*next;
+	int				target;
+	int				cost;
 }	t_stack;
 
 long	ft_atoi_zero(const char *str);
@@ -56,4 +58,8 @@ void	find_max_index(t_stack **a_stack, int *max_index);
 void	rotate_or_reverse_rotate(t_stack **a_stack);
 void	ft_sort_hundred_numbers(t_stack **a_stack, t_stack **b_stack);
 int		determine_chunks(int stack_size);
+t_stack	*partition(t_stack *first, t_stack *last);
+int		count_words(const char *str, char c);
+char	**create_argv(int word_num, char **argv);
+
 #endif
