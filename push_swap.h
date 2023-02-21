@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 13:08:29 by jshestov          #+#    #+#             */
-/*   Updated: 2023/02/13 15:47:00 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:14:24 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void		push_b(t_list **a_stack, t_list **b_stack, int silent);
 void		reverse_rotate_a(t_list **a_stack, int silent);
 void		reverse_rotate_b(t_list **b_stack, int silent);
 void		reverse_rotate_a_b(t_list **a_stack, t_list **b_stack, int silent);
-void		exit_print();
+void		exit_print(void);
 void		create_stack_b(t_list **a_stack, t_list **b_stack);
 void		sort_morethan_three(t_list **a_stack, t_list **b_stack);
 void		get_position_stack(t_list *a_stack, t_list *b_stack);

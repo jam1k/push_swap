@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 11:17:42 by jshestov          #+#    #+#             */
-/*   Updated: 2023/02/21 14:53:09 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:13:35 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ static int	check_bigger_then_int(char **array)
 			lenght++;
 			j++;
 		}
-		if (lenght > (ft_strlen(array[i])) || (ft_atoll(array[i]) > 2147483647 || \
-												ft_atoll(array[i]) < -2147483648))
+		if (lenght > (ft_strlen(array[i])) || \
+			(ft_atoll(array[i]) > INT_MAX || ft_atoll(array[i]) < INT_MIN))
 			return (EXIT_FAILURE);
 		i++;
 	}
@@ -108,20 +108,14 @@ int	*check_args(int ac, char **av, unsigned int *size)
 	*size = 0;
 	while (array_char[*size])
 		(*size)++;
-
-	if (check_bigger_then_int(array_char) == EXIT_FAILURE)
-	{
-		ft_putendl_fd("Error", STDERR_FILENO);
-		free_double_ptr_char(array_char);
-		exit(EXIT_FAILURE);
-	}
 	array_int = convert_array_to_int(array_char);
 	if (array_int == NULL)
 	{
 		free_double_ptr_char(array_char);
 		exit(EXIT_FAILURE);
 	}
-	if (check_duplicate(array_int, *size) == EXIT_FAILURE)
+	if (check_bigger_then_int(array_char) == EXIT_FAILURE || \
+		check_duplicate(array_int, *size) == EXIT_FAILURE)
 	{
 		ft_putendl_fd("Error", STDERR_FILENO);
 		free(array_int);

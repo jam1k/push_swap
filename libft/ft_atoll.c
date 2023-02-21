@@ -6,13 +6,13 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 12:38:32 by jshestov          #+#    #+#             */
-/*   Updated: 2023/02/21 14:50:35 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/02/21 15:14:44 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long long		ft_atoll(const char *str)
+long long	ft_atoll(const char *str)
 {
 	int			i;
 	int			f;
