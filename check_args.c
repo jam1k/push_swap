@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 11:17:42 by jshestov          #+#    #+#             */
-/*   Updated: 2023/02/21 15:13:35 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:23:17 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,7 @@ int	*check_args(int ac, char **av, unsigned int *size)
 	*size = 0;
 	while (array_char[*size])
 		(*size)++;
+
 	array_int = convert_array_to_int(array_char);
 	if (array_int == NULL)
 	{
