@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:44:20 by jshestov          #+#    #+#             */
-/*   Updated: 2023/04/24 10:40:26 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:41:38 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ t_list	*create_linked_list(int ac, char **av)
 	array = check_args(ac, av, &size);
 	i = 0;
 	stack_a = NULL;
-	if (size == 0)
-		return (NULL);
 	while (i < size)
 	{
 		node = create_node(array[i++]);

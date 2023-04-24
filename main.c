@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 10:06:31 by jshestov          #+#    #+#             */
-/*   Updated: 2023/04/24 11:34:14 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:42:09 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,6 @@ int	main(int ac, char **av)
 		return (0);
 	a_stack = create_linked_list(ac, av);
 	b_stack = NULL;
-
-	if (a_stack == NULL)
-	{
-		ft_lstclear(&a_stack, free);
-		return (0);
-	}
 	if (stack_is_sorted(a_stack, b_stack))
 	{
 		ft_lstclear(&a_stack, free);
