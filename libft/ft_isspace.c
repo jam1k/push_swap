@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_node_at_index.c                                :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 13:14:37 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/24 13:47:11 by jshestov         ###   ########.fr       */
+/*   Created: 2023/01/27 14:52:09 by jshestov          #+#    #+#             */
+/*   Updated: 2023/01/27 15:03:39 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-t_stack	*get_node_at_index(t_stack *head, int i)
+int	ft_isspace(int c)
 {
-	t_stack	*current;
-	int		count;
-
-	current = head;
-	count = 0;
-	while (current)
-	{
-		if (count == i)
-			return (current);
-		count++;
-		current = current->next;
-	}
-	return (NULL);
+	if (c == '\t' || c == '\n' || c == '\v'
+		|| c == '\f' || c == '\r' || c == ' ')
+		return (1);
+	else
+		return (0);
 }

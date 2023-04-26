@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   count_words.c                                      :+:      :+:    :+:   */
+/*   print_linked_list.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/25 10:44:03 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/25 11:41:57 by jshestov         ###   ########.fr       */
+/*   Created: 2023/02/06 13:40:38 by jshestov          #+#    #+#             */
+/*   Updated: 2023/02/07 11:35:10 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	count_words(const char *str, char c)
-{
-	int	i;
-	int	trigger;
+#include "push_swap.h"
 
-	i = 0;
-	trigger = 0;
-	while (*str)
+void	print_list(t_list *stack)
+{
+	if (!stack)
+		return ;
+	ft_printf("Beginning of Stack\n");
+	while (stack)
 	{
-		if (*str != c && trigger == 0)
-		{
-			trigger = 1;
-			i++;
-		}
-		else if (*str == c)
-			trigger = 0;
-		str++;
+		ft_printf("stack = %d\n", stack->content->value);
+		stack = stack->next;
 	}
-	return (i);
+	ft_printf("End of Stack\n");
 }

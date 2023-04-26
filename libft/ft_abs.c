@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_hundred_numbers.c                             :+:      :+:    :+:   */
+/*   ft_abs.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 10:32:19 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/25 10:35:08 by jshestov         ###   ########.fr       */
+/*   Created: 2023/02/13 14:27:37 by jshestov          #+#    #+#             */
+/*   Updated: 2023/02/13 14:29:23 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_sort_hundred_numbers(t_stack **a_stack, t_stack **b_stack)
+long int	ft_abs(long int num)
 {
-	t_stack	*current;
-	int		chunks;
-	int		i;
-
-	if (!*a_stack)
-		return ;
-	chunks = determine_chunks(ft_stacksize(*a_stack));
-	current = *a_stack;
-	i = 1;
-	while (i <= chunks)
-	{
-		while (current)
-		{
-			if (current->content < i * 20)
-				break ;
-		}
-		chunks--;
-	}
-	print_list(*b_stack);
+	if (num >= 0)
+		return (num);
+	else
+		return (-num);
 }

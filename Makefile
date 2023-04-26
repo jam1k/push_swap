@@ -6,7 +6,7 @@
 #    By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/22 10:18:43 by jshestov          #+#    #+#              #
-#    Updated: 2023/01/25 10:43:57 by jshestov         ###   ########.fr        #
+#    Updated: 2023/02/13 14:58:58 by jshestov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,9 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 
 BUILD_DIR	= build
 SRC_DIR		= ./
-SRCS		= 	main.c print_list.c stack_utilities.c push_stack.c swap_stack.c rotate_stack.c reverse_rotate_stack.c \
-				sort_two_numbers.c sort_three_numbers.c sort_four_numbers.c sort_five_numbers.c stack_is_sorted.c \
-				find_min_max_index.c sort_more_numbers.c ft_atoi_check.c error_handling.c rotate_or_reverse_rotate.c \
-				sort_hundred_numbers.c determine_chunks.c quick_sort.c count_words.c
-
+SRCS		= 	main.c linked_list.c check_args.c array.c utilities.c print_linked_list.c\
+				fill_linked_list.c stack_is_sorted.c sort_upto_three.c swap.c rotate.c reverse_rotate.c push.c\
+				sort_morethan_three.c stack_position.c chose_rr_or_r.c
 OBJS = $(SRCS:%.c=$(BUILD_DIR)/%.o)
 
 all: $(NAME)

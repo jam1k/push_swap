@@ -6,7 +6,7 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/31 09:17:37 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/25 11:39:55 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/01/27 15:04:08 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	**ft_split(char const *s, char c)
 	int		index;
 	char	**split;
 
-	split = (char**) malloc((count_words(s, c) + 1) * sizeof(char *));
+	split = (char **) malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (0);
 	i = 0;

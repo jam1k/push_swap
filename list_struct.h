@@ -1,26 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_list.c                                       :+:      :+:    :+:   */
+/*   list_struct.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 09:51:53 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/13 14:41:27 by jshestov         ###   ########.fr       */
+/*   Created: 2023/01/27 10:08:51 by jshestov          #+#    #+#             */
+/*   Updated: 2023/02/07 11:33:14 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef LIST_STRUCT_H
+# define LIST_STRUCT_H
 
-void	print_list(t_stack *node)
+# define T_LIST
+
+typedef struct s_stack
 {
-	if (!node)
-		return ;
-	ft_printf("Beginning of Stack\n");
-	while (node)
-	{
-		ft_printf("stack = %d\n", node->content);
-		node = node->next;
-	}
-	ft_printf("End of Stack\n");
-}
+	int				value;
+	unsigned int	index;
+	unsigned int	pos;
+	unsigned int	target_pos;
+	long int		cost_a;
+	long int		cost_b;
+}					t_stack;
+
+typedef struct s_list
+{
+	t_stack			*content;
+	struct s_list	*next;
+}					t_list;
+
+#endif

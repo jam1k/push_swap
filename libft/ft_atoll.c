@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_or_reverse_rotate.c                         :+:      :+:    :+:   */
+/*   ft_atoll.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/24 09:29:41 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/24 09:38:47 by jshestov         ###   ########.fr       */
+/*   Created: 2023/02/06 12:38:32 by jshestov          #+#    #+#             */
+/*   Updated: 2023/02/21 15:14:44 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	rotate_or_reverse_rotate(t_stack **a_stack)
+long long	ft_atoll(const char *str)
 {
-	int	min_index;
+	int			i;
+	int			f;
+	long long	out;
 
-	min_index = 0;
-	find_min_index(a_stack, &min_index);
-	if (min_index < ft_stacksize(*a_stack) / 2)
+	i = 0;
+	f = 1;
+	out = 0;
+	while (ft_isspace(str[i]))
+		++i;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		while (min_index)
-		{
-			rotate_a(a_stack);
-			min_index--;
-		}
+		if (str[i] == '-')
+			f = -1;
+		++i;
 	}
-	else
+	while (str[i] && str[i] >= '0' && str[i] <= '9')
 	{
-		while (min_index < ft_stacksize(*a_stack))
-		{
-			reverse_rotate_a(a_stack);
-			min_index++;
-		}
+		out = out * 10 + (str[i] - '0');
+		++i;
 	}
+	return (f * out);
 }

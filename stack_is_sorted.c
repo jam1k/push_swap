@@ -6,29 +6,29 @@
 /*   By: jshestov <jshestov@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/16 10:14:55 by jshestov          #+#    #+#             */
-/*   Updated: 2023/01/16 10:22:38 by jshestov         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:11:15 by jshestov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	stack_is_sorted(t_stack **a_stack)
+int	stack_is_sorted(t_list *a_stack, t_list *b_stack)
 {
-	t_stack	*current;
-	t_stack	*next;
+	int		max_value;
 
-	if (!*a_stack)
+	if (b_stack != NULL)
 		return (0);
-	current = *a_stack;
-	next = current->next;
-	while (next)
+	if (ft_lstsize(a_stack) == 1)
+		return (1);
+	max_value = a_stack->content->value;
+	a_stack = a_stack->next;
+	while (a_stack)
 	{
-		if (next->content < current->content)
-		{
+		if (max_value < a_stack->content->value)
+			max_value = a_stack->content->value;
+		else
 			return (0);
-		}
-		current = current->next;
-		next = current->next;
+		a_stack = a_stack->next;
 	}
 	return (1);
 }
